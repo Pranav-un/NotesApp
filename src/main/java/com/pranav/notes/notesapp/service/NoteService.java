@@ -1,6 +1,7 @@
 package com.pranav.notes.notesapp.service;
 
 
+import com.pranav.notes.notesapp.exception.NoteNotFoundException;
 import com.pranav.notes.notesapp.model.Note;
 import com.pranav.notes.notesapp.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class NoteService {
                     note.setContent(upadtedNote.getContent());
                     return noteRepository.save(note);
                 })
-                .orElseThrow(() -> new RuntimeException("Note not found with id: " + id));
+                .orElseThrow(() -> new NoteNotFoundException(id));
     }
 
     public void deleteNote(Long id) {

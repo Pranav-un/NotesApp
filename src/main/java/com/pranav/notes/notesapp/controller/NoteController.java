@@ -3,6 +3,7 @@ package com.pranav.notes.notesapp.controller;
 
 import com.pranav.notes.notesapp.model.Note;
 import com.pranav.notes.notesapp.service.NoteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class NoteController {
     private NoteService noteService;
 
     @PostMapping
-    public Note createNote(@RequestBody Note note) {
+    public Note createNote( @Valid @RequestBody Note note) {
         return noteService.createNote(note);
     }
 

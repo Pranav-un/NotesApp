@@ -1,4 +1,4 @@
-package com.pranav.notes.notesapp.util;
+package com.pranav.notes.notesapp.mapper;
 
 import com.pranav.notes.notesapp.dto.NoteDTO;
 import com.pranav.notes.notesapp.model.Note;

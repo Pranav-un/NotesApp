@@ -4,17 +4,15 @@ package com.pranav.notes.notesapp.controller;
 import com.pranav.notes.notesapp.dto.NoteDTO;
 import com.pranav.notes.notesapp.model.Note;
 import com.pranav.notes.notesapp.service.NoteService;
-import com.pranav.notes.notesapp.util.NoteMapper;
+import com.pranav.notes.notesapp.mapper.NoteMapper;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/notes")

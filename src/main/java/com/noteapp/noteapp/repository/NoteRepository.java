@@ -20,10 +20,10 @@ public interface NoteRepository extends JpaRepository<Note, Long> {
     Optional<Note> findByIdAndUserId(Long id, Long userId);
 
 
-    @Query("SELECT n FROM Note n WHERE n.user.id = :userId " +
-            "AND n.archived = false " +
-            "AND (LOWER(n.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) " +
-            "OR LOWER(n.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')))")
+//    @Query("SELECT n FROM Note n WHERE n.user.id = :userId " +
+//            "AND n.archived = false " +
+//            "AND (LOWER(n.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) " +
+//            "OR LOWER(n.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')))")
 
     Page<Note> searchNotes(@Param("userId") Long userId,
                            @Param("searchTerm") String searchTerm,
